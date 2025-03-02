@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CrispClone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">\
+    <style>
+        
+
+        /* Parent Grid Container */
+.crispclone {
+    /* display: grid;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr; 
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr; */
+
+    position: relative;
+    background-color: #f5f8fc; /* Crisp-like background */
+    box-sizing: border-box;
+    
+}
+
+/* Background Images */
+.crispclone::before,
+.crispclone::after {
+    content: "";
+    position: absolute;
+    top:200px;
+    
+    width: 100vh;/* Adjust size */
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px;
+    z-index: 1;
+}
+
+.crispclone::before {
+    left: 0;
+    background-image: url('https://crisp.chat/_ipx/w_736/components/home/HomeHeroBackground/land_left.svg'); /* Left background */
+}
+
+.crispclone::after {
+    right: 0;
+    z-index: 1;
+    background-image: url('https://crisp.chat/_ipx/w_620/components/home/HomeHeroBackground/land_right.svg'); /* Right background */
+}
+
+/* Sticky Navbar */
+nav {
+   
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: rgba(255, 255, 255, 0.9); */
+    padding: 15px 50px;
+    
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    z-index: 1000;
+    background-color: rgb(224, 236, 239, 0.96) ;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* Other Styles */
+.nav2{
+    display: flex;
+    gap: 20px;
+}
+.nav4{
+    display: flex;
+    gap: 20px;
+}
+.nav3 {
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#btn1{
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+#btn2{
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(to right,rgb(133, 188, 84),rgb(80, 140, 27));
+    background-color: rgb(93, 158, 36);
+    color: white;
+    border-radius: 20px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#btn2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(80, 140, 27, 0.4);
+}
+
+.bdy1 {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000;
+    
+}
+
+.bdy11 {
+    border: 2px solid rgb(55, 83, 208);
+    border-radius: 25px;
+    padding: 5px;
+    width: 38vh;
+    margin-left: 520px;
+    margin-bottom: 20px;
+    
+}
+.bdy11 button{
+    background-color: rgb(55, 83, 208);
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    
+}
+.bdy12 {
+    
+    width: 50%;
+    margin-left: 320px;
+    margin-right: 275px;
+    font-weight: 200;
+    font-size: 30px;
+    
+    font-family: "Arial black", Gadget, sans-serif;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.bdy13 {
+    width: 60%;
+    z-index: 1000;
+    margin-left: 300px;
+    margin-right: 350px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.bdy14 button {
+    color: white;
+    background: linear-gradient(to right,rgb(133, 188, 84),rgb(80, 140, 27));
+    border-radius: 20px;
+    padding: 13px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.bdy14 button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(80, 140, 27, 0.4);
+    cursor: pointer;
+}
+
+.bdy15 {
+    margin-bottom: 100px;
+}
+.parent1 {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+
+#cnt1 {
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    
+
+}
+#cnt1 img{
+    width: 70%;
+    opacity: 1;
+    z-index: 1000;
+    border: 10px white solid ;
+    
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+#cnt2 img {
+    position: absolute;
+    width: 300px;
+    
+    z-index: 10000;
+    left: 100px;
+    top: 380px;
+
+
+}
+
+.parent2 {
+    display: flex;
+    justify-content: center;
+    margin: 30px 180px;
+    gap: 30px;
+}
+.child1, .child2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.parent3{
+    display: flex;
+    justify-content: center;
+    margin: 30px 180px;
+    padding: 30px;
+    border: 1px solid rgb(227, 213, 213);
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    background-color: #f4f2f2;
+}
+
+
+.parent4 {
+    margin: 30px 180px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ai {
+    grid-area: 1/1/2/2;
+    padding: 30px;
+    border: 1px solid rgb(227, 213, 213);
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    background-color: #f4f2f2;
+}
+.knowledge {
+    grid-area: 2/1/4/2 ;
+    padding: 30px;
+    border: 1px solid rgb(227, 213, 213);
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    background-color: #f4f2f2;
+}
+.widget {
+    grid-area: 1/2/3/3;
+    padding: 30px;
+    border: 1px solid rgb(227, 213, 213);
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    background-color: #f4f2f2;
+}
+.campaigns {
+    grid-area: 3/2/4/3;
+    padding: 30px;
+    border: 1px solid rgb(227, 213, 213);
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    background-color: #f4f2f2;
+}
+
+.parent5 {
+    margin: 30px 180px;
+    text-align: center;
+}
+
+.waterbot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.waterbot img {
+    width: 50%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.child51 h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.child52 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: #f4f2f2;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    text-align: left;
+    border: 1px solid rgb(227, 213, 213);
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.stats-section {
+    background: #f5f8fc;
+    padding: 80px 0;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h2 {
+    font-size: 36px;
+    color: #3753d0;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: #666;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cta-primary {
+    background: linear-gradient(to right, rgb(133, 188, 84), rgb(80, 140, 27));
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(80, 140, 27, 0.4);
+    cursor: pointer;
+}
+
+.cta-secondary {
+    background: white;
+    color: #333;
+    border: 2px solid #ccc;
+}
+
+.stitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stitle h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+}
+
+#Inbox, #Automate {
+    background: #f4f2f2;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+    border: 1px solid rgb(227, 213, 213);
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#Inbox h4, #Automate h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#Inbox h2, #Automate h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#Inbox p, #Automate p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#Inbox button, #Automate button {
+    background: none;
+    border: none;
+    color: rgb(55, 83, 208);
+    cursor: pointer;
+    padding: 0;
+}
+
+#inboximg img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#automateimg img {
+    width: 85%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+        
+        
+    </style>
+  </head>
+  <body>
+    <div class="crispclone">
+        <div class="container">
+            <nav>
+                <div class="nav1">
+                <h2>
+                    Crisp Clone
+                </h2>
+                </div>
+                <div class="nav2">
+                
+                    <div>Features</div>
+                    <div>Apps</div>
+                    <div>Pricing</div>
+                    <div>Integrations</div>
+                    <div>Help</div>
+                    <div></div>
+                
+                </div>
+                <div class="nav3">
+                
+                <form action="search">
+                    <input class="form-control me-2" type="search" placeholder="Search our website" aria-label="Search">
+                </form>
+                </div>
+                <div class="nav4">
+                    <button id="btn1">Login</button>
+                    <button id="btn2">Get Started</button>
+                </div>
+            
+            </nav>
+            <div class="bdy1">
+                <div class="bdy11">
+                    <button>New</button>
+                    <a href="something"> The new Crisp V4 is out
+                        <svg
+						width="16"
+						height="16"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="m6 12 4-4-4-4" />
+					</svg>
+                    </a>
+                </div> 
+                <div class="bdy12">
+                    <h1>The future of customer support is here</h1>
+                </div>
+                <div class="bdy13">
+                    <p>The all-in-one AI-powered business messaging platform that gathers teams, conversations, data and knowledge, around one place.
+
+                    </p>
+                </div>
+                <div class="bdy14">
+                    <a href="https://example.com" target="_blank">
+                        <button> Use Crisp for free </button>
+                    </a>
+                </div>
+                <div class="bdy15">
+                    <p>14 days free trial — No commitment</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<div class="parent1">
+    <div class="container d-flex justify-content-center" id="cnt1">
+        <img src="https://crisp.chat/_ipx/w_2800&f_png&q_90/components/home/HomeHeroApp/screenshot.png" alt="Not able to load image">
+    </div>
+
+    <div class="container" id="cnt2">
+        <img src="https://crisp.chat/_ipx/w_325/components/home/HomeHeroApp/scene_left.png" alt="">
+    </div>
+</div>
+<div class="stitle">
+    <h1>Meet the workspace that delights your teams & customers</h1>
+</div>
+
+
+
+
+
+<div class="parent2">
+    <div class="child1">
+        <div id="Inbox">
+            <h4>Inbox</h4>
+            <h2>Centralize your inbound messages</h2>
+            <p>Centralize all your inbound conversations from emails, website chat, WhatsApp, Messenger, phone, and more into one collaborative inbox. This allows multiple team members to access, manage, and respond to messages efficiently.</p>
+            <button>Learn more</button>
+            <div id="inboximg">
+                <img src="https://crisp.chat/_ipx/w_533/components/home/HomeFeatures/shared_inbox.png" alt="Inbox feature">
+            </div>
+        </div>
+    </div>
+    <div class="child2">
+        <div id="Automate">
+            <h4>Automations</h4>
+            <h2>Build powerful, AI‑native, workflows</h2>
+            <p>Earn more time with automated workflows that makes your teams' life way easier. Fed with artificial intelligence, automations help to streamline internal tasks and respond to users automatically, enhancing efficiency and reducing your team's workload by 50%</p>
+            <button>Learn more</button>
+            <div id="automateimg">
+                <img src="https://crisp.chat/_ipx/w_533/components/home/HomeFeatures/chatbot.png" alt="Automation feature">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parent3">
+    <div class="crm">
+        <h4>CRM</h4>
+        <h3>Allow your teams to leverage customer's data</h3>
+        <p>Synchronize leads' and customers' data in one unified view gathered from one or multiple sources. This ensures whenever you communicate with someone, you have access to their data and past interactions, enabling more personnal and personalized conversations.</p>
+        <button>Learn more</button>
+    </div>
+    <div class="crmimg">
+        <img src="https://crisp.chat/_ipx/w_440/components/home/HomeFeatures/crm.png" alt="">
+
+    </div>
+</div>
+
+
+
+<div class="parent4">
+    <div class="ai">
+        <h5>Artificial Intelligence</h5>
+        <h4>Train an AI agent with your public and private content</h4>
+        <p>Leverage the power of asynchronous communication by creating, editing, and managing help articles. Create your own help center that fits your brand, providing your customers with easily accessible, comprehensive guides and solutions, enabling them to find answers at any time.</p>
+        <button>Learn more</button>
+
+    </div>
+    <div class="knowledge">
+        <div id="kntext">
+            <h5>Knowledge</h5>
+            <h4>Make your customers more autonomous</h4>
+            <p>Leverage the power of asynchronous communication by creating, editing, and managing help articles. Create your own help center that fits your brand, providing your customers with easily accessible, comprehensive guides and solutions, enabling them to find answers at any time.</p>
+            <button>Learn more</button>
+            <p>     </p>
+            <br>
+
+        </div>
+        <div id="knimg">
+            <img src="https://crisp.chat/_ipx/w_533/components/home/HomeFeatures/knowledge_base.png" alt="">
+
+        </div>
+    </div>
+    <div class="widget">
+        <div id="witext">
+            <h5>Widget</h5>
+            <h4>Craft high-end's experiences on your website</h4>
+            <p>Build amazing connections with customers browsing your website, whether you're online or offline, with a website chat integrated. Engage with visitors in real-time, provide instant support, gather user feedback, and guide them all the way through the buying experience.</p>
+            <button>learn more</button>
+
+        </div>
+        <div id="wiimg">
+            <img src="https://crisp.chat/_ipx/w_533/components/home/HomeFeatures/widget.png" alt="">
+
+        </div>
+    </div>
+    <div class="campaigns">
+        <h5>Campaigns</h5>
+            <h4>Engage proactively and consistently</h4>
+            <p>Onboard customers with in-context, multichannel automated messages that delivers timely and relevant information and guidance across various channels. This approach ensures customers receive the assistance they need precisely when they need it, enhancing their experience and reducing the time your support team spends on repetitive tasks.</p>
+            <button>Learn more</button>
+
+    </div>
+</div>
+
+<div class="parent5">
+    <div class="waterbot">
+        <img src="https://crisp.chat/_ipx/f_png&s_2800x1246/components/home/HomeAreas/waterbot.webp" alt="">
+    </div>
+    <div class="child51">
+        <h1>Built for customer support, marketing, and sales. All together.</h1>
+    </div>
+    <div class="child52">
+        <div class="feature-card">
+            <h3>Support</h3>
+            <p>Provide exceptional customer support with real-time chat, email management, and automated responses. Build lasting relationships with your customers through personalized interactions.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Marketing</h3>
+            <p>Drive engagement and conversions with targeted campaigns, automated workflows, and personalized messaging. Reach your audience across multiple channels effectively.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Sales</h3>
+            <p>Convert more leads into customers with powerful CRM tools, automated follow-ups, and detailed analytics. Track and optimize your sales process in real-time.</p>
+        </div>
+    </div>
+</div>
+
+<div class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h2>500K+</h2>
+            <p>Websites using Crisp</p>
+        </div>
+        <div class="stat-card">
+            <h2>2B+</h2>
+            <p>Messages exchanged</p>
+        </div>
+        <div class="stat-card">
+            <h2>200+</h2>
+            <p>Countries worldwide</p>
+        </div>
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Customer support</p>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2>Ready to transform your customer experience?</h2>
+    <p>Join thousands of businesses already using Crisp to delight their customers</p>
+    <div class="cta-buttons">
+        <button class="cta-button cta-primary">Start free trial</button>
+        <button class="cta-button cta-secondary">View pricing</button>
+    </div>
+</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
